@@ -40,6 +40,8 @@ class Program
         {
             journalEntry.DisplayEntryList();
         }
+
+        //Showing Creativity and Exceeding Requirements
         else if (numChoice == 3)
         {
             Console.WriteLine("What entry do you want to delete?");

@@ -30,7 +30,7 @@ public class Journal
                 Console.WriteLine();
             }
         }
-   
+
     }
 
     public void LoadJournal()
@@ -54,4 +54,4 @@ public class Journal
     {
         _storedEntries.Remove(entry);
     }
-}    
+}

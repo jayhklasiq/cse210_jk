@@ -1,0 +1,2 @@
+Simple|1|clean the house|100|True
+Simple|wash|wash the car|50|True

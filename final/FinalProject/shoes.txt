@@ -1,0 +1,5 @@
+shoes | shoebrand | shoecolor | shoesize | shoePrize | shoequantity
+Nike | Air Jordan 1 | Black/White | 10 | $190 | 10
+Adidas | Yeezy Boost 350 V2 | Cream White | 8.5 | $220 | 5
+Vans | Old Skool | Black | 9 | $60 | 20
+Converse | Chuck Taylor All Star | White | 7 | $50 | 15

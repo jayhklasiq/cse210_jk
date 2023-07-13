@@ -6,7 +6,13 @@ public class Product
   private string _color;
   private int _price;
   private int _quantity;
+  private int _numOfItemsInCart = 0;
+  private int _totalPrice = 0;
 
+  public int GetTotalPrice()
+  {
+    return _totalPrice;
+  }
   public string GetBrand()
   {
     return _brand;
@@ -47,10 +53,6 @@ public class Product
   {
     _price = price;
   }
-  public virtual void CalculateTotalPrice()
-  {
-    // Calculate total price based on specific logic in derived classes
-  }
 
   public virtual void DisplayProducts()
   {
@@ -62,10 +64,39 @@ public class Product
   {
     // Implement the generic load data logic here
   }
-  protected virtual void UpdateQuantityInFile(Watch selectedRing)
+
+  public virtual void DisplayCart()
   {
-    // Implementation to update the quantity in the file
+    string cartFile = "cartItem.txt";
+
+    if (File.Exists(cartFile))
+    {
+      Console.WriteLine("----------SHOPPING CART----------");
+      Console.WriteLine("BRAND - ITEM - PRICE");
+
+      string[] lines = File.ReadAllLines(cartFile);
+      foreach (string line in lines)
+      {
+        string[] parts = line.Split("|");
+        string brand = parts[0];
+        string itemName = parts[1];
+        string p = parts[2];
+        int price = int.Parse(p);
+
+        Console.WriteLine($"[{brand}] - {itemName} - ${price}");
+        _numOfItemsInCart++;
+        _totalPrice += price;
+      }
+        Console.WriteLine($"Total:      ${_totalPrice}");
+        Console.WriteLine();
+        Console.WriteLine($"You have {_numOfItemsInCart} items in your cart.");
+    }
+    else
+    {
+      Console.WriteLine("Your shopping cart is empty.");
+    }
   }
+
 
   public void ChooseCategory()
   {

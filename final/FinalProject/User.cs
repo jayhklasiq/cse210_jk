@@ -22,6 +22,11 @@ public class User : Product
           displayCart.DisplayCart();
           break;
         case 3:
+          Console.Clear();
+          Product showItemsToCheckout = new Product();
+          showItemsToCheckout.DisplayCart();
+          Order orderReceipt = new Order();
+          orderReceipt.PlaceOrder();
           break;
         case 4:
           UserData dataInfo = new UserData();

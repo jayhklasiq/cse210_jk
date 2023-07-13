@@ -1,27 +1,17 @@
 public class Order
 {
-  private List<Product> _productsOrdered;
-  private int _orderDate;
+  private DateTime _orderDate = DateTime.Now;
   private string _shippingAddress;
-  private string _orderTrackingNumber;
 
   public void PlaceOrder()
   {
-    // Place order logic
-  }
-
-  public void RequestRefund()
-  {
-    // Request refund logic
-  }
-
-  public void GenerateInvoice()
-  {
-    // Generate invoice logic
-  }
-
-  public void RemoveFromCart()
-  {
-    // Remove product from order
+    Console.WriteLine();
+    Console.WriteLine("What is your shipping address: ");
+    _shippingAddress = Console.ReadLine();
+    if (_shippingAddress != null)
+    {
+      Console.WriteLine("Thank you for shopping at JK Mall. Your order is being processed.");
+      Console.WriteLine("Proceed to payment.");
+    }
   }
 }

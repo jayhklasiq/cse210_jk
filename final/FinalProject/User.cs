@@ -18,6 +18,8 @@ public class User : Product
           shop.ChooseCategory();
           break;
         case 2:
+          ShoppingCart displayCart = new ShoppingCart();
+          displayCart.DisplayCart();
           break;
         case 3:
           break;

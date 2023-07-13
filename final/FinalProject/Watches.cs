@@ -65,8 +65,8 @@ public class Watch : Product
           // Subtract 1 from the quantity of the selected watch
           selectedWatch.SetQuantity(selectedWatch.GetQuantity() - 1);
 
+          // Update the text file with the new quantity value
           UpdateQuantityInFile(selectedWatch);
-
         }
         else
         {

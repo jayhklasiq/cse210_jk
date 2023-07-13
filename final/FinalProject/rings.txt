@@ -1,4 +1,4 @@
 ringbrand | ringname | ringtype | Pricetag | ringquantity
-Tiffany & Co. | Solitaire | Silver | $1000 | 10
+Tiffany & Co. | Solitaire | Silver | $1000 |9
 Cartier | Love | Steel | $5000 | 5
-Bulgari | Serpenti | Gold | $10000 | 2
+Bulgari | Serpenti | Gold | $10000 |1

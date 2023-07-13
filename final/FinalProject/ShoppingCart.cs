@@ -1,15 +1,15 @@
-public class ShoppingCart
+// namespace OnlineStore;
+
+public class ShoppingCart : Product
 {
-  private List<Product> _productsInCart;
+  public List<Product> _productsInCart = new List<Product>();
   private int _numOfItemsInCart;
-
-  public void AddProduct()
+  public void IncrementNumOfItemsInCart()
   {
-    // Add product to shopping cart
+    _numOfItemsInCart++;
   }
-
-  public void RemoveProduct()
+  public float GetNumOfItemsInCart()
   {
-    // Remove product from shopping cart
+    return _numOfItemsInCart;
   }
 }

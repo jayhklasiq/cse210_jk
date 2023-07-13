@@ -1,4 +1,4 @@
 phonebrand | phonename | phonecolor | pricetag | phonequantity
-Apple | iPhone 13 Pro | Graphite | $999 |99
-Samsung | Galaxy S22 Ultra | Phantom Black | $1199 |47
-Google | Pixel 6 Pro | Stormy Black | $899 |24
+Apple | iPhone 13 Pro | Graphite | $999 | 100
+Samsung | Galaxy S22 Ultra | Phantom Black | $1199 | 46
+Google | Pixel 6 Pro | Stormy Black | $899 | 22

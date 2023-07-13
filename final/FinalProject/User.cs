@@ -6,7 +6,7 @@ public class User : Product
     while (!endProgram)
     {
       Console.WriteLine("1. Shop");
-      Console.WriteLine("2. Cart");
+      Console.WriteLine("2. View Cart");
       Console.WriteLine("3. Checkout");
       Console.WriteLine("4. Account");
       int menuResponse = int.Parse(Console.ReadLine());

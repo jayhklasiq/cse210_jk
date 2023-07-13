@@ -72,10 +72,18 @@ public class Shoes : Product
           productToAdd.SetPrice(selectedShoe.GetPrice());
           addProduct._productsInCart.Add(productToAdd);
 
-          addProduct.IncrementNumOfItemsInCart();
-          Console.WriteLine("Product added to the cart successfully.");
-          Console.WriteLine($"{addProduct.GetNumOfItemsInCart()} products is in your cart.");
+          string cartFile = "cartItem.txt";
+          using (StreamWriter outputFile = File.AppendText(cartFile))
+          {
+            foreach (Product product in addProduct._productsInCart)
+            {
+              outputFile.WriteLine($"{product.GetBrand()}|{product.GetName()}|{product.GetPrice()}");
+            }
+          }
 
+          // addProduct.IncrementNumOfItemsInCart();
+          Console.WriteLine("Product added to the cart successfully.");
+          Console.WriteLine();
 
           // Subtract 1 from the quantity of the selected shoe
           selectedShoe.SetQuantity(selectedShoe.GetQuantity() - 1);

@@ -1,7 +1,6 @@
 // namespace OnlineStore;
 public class Product
 {
-  private int _totalPrice;
   private string _brand;
   private string _name;
   private string _color;

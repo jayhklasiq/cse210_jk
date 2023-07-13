@@ -4,39 +4,57 @@ public class ShoppingCart : Product
 {
   public List<Product> _productsInCart = new List<Product>();
   private int _numOfItemsInCart = 0;
-  public int IncrementNumOfItemsInCart()
-  {
-    _numOfItemsInCart = 0; // Reset the count to 0
-
-    foreach (Product product in _productsInCart)
-    {
-      _numOfItemsInCart++; // Increment by 1 for each item in the cart
-    }
-    return _numOfItemsInCart;
-  }
-  public float GetNumOfItemsInCart()
-  {
-    return _numOfItemsInCart;
-  }
+  private int _totalPrice = 0;
 
   public void DisplayCart()
   {
-    Console.WriteLine("Items in Cart:");
-    foreach (Product items in _productsInCart)
+    string cartFile = "cartItem.txt";
+
+    if (File.Exists(cartFile))
     {
-      if (items != null)
+      Console.WriteLine("----------SHOPPING CART----------");
+      Console.WriteLine("BRAND - ITEM - PRICE");
+
+      string[] lines = File.ReadAllLines(cartFile);
+      foreach (string line in lines)
       {
-        string brand = items.GetBrand();
-        string name = items.GetName();
-        string price = items.GetPrice().ToString();
+        string[] parts = line.Split("|");
+        string brand = parts[0];
+        string itemName = parts[1];
+        string p = parts[2];
+        int price = int.Parse(p);
 
-        string itemDetails = $"{brand} - {name} - {price}";
-
-        Console.WriteLine(itemDetails);
-      else
-        {
-          Console.WriteLine("You have no item in cart.");
-        }
+        Console.WriteLine($"[{brand}] - {itemName} - ${price}");
+        _numOfItemsInCart++;
+        _totalPrice += price;
       }
+        Console.WriteLine($"Total:      ${_totalPrice}");
+        Console.WriteLine();
+        Console.WriteLine($"You have {_numOfItemsInCart} items in your cart.");
+    }
+    else
+    {
+      Console.WriteLine("Your shopping cart is empty.");
     }
   }
+
+  public void SaveItemsToCartFile()
+  {
+    string filename = "cartItem.txt";
+    List<string> lines = new List<string>();
+
+    foreach (Product product in _productsInCart)
+    {
+      string brand = product.GetBrand();
+      string name = product.GetName();
+      string price = product.GetPrice().ToString();
+
+      string itemDetails = $"{brand} - {name} - {price}";
+      lines.Add(itemDetails);
+    }
+
+    File.WriteAllLines(filename, lines);
+    Console.WriteLine("Items saved to cartItem.txt.");
+  }
+
+}

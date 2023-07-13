@@ -62,9 +62,18 @@ public class Phones : Product
           productToAdd.SetPrice(selectedPhone.GetPrice());
           addProduct._productsInCart.Add(productToAdd);
 
+          string cartFile = "cartItem.txt";
+          using (StreamWriter outputFile = File.AppendText(cartFile))
+          {
+            foreach (Product product in addProduct._productsInCart)
+            {
+              outputFile.WriteLine($"{product.GetBrand()}|{product.GetName()}|{product.GetPrice()}");
+            }
+          }
+
           // addProduct.IncrementNumOfItemsInCart();
           Console.WriteLine("Product added to the cart successfully.");
-          Console.WriteLine($"{addProduct.IncrementNumOfItemsInCart()} products is in your cart.");
+          Console.WriteLine();
 
           // Subtract 1 from the quantity of the selected phone
           selectedPhone.SetQuantity(selectedPhone.GetQuantity() - 1);

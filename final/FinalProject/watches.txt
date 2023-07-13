@@ -1,6 +1,6 @@
 watchbrand | watchname | watchcolor| watchPrize | watchquantity
-Rolex | Submariner | Black | $8800 | 1
-Omega | Speedmaster | Moonwatch | $6000 | 2
-Tag Heuer | Carrera | Calibre 16 | $3000 |2
-Seiko | Prospex | Samurai | $500 | 4
-Casio | G-Shock | DW-5600E | $100 | 5
+Rolex | Submariner | Black | $8800 | 50
+Omega | Speedmaster | Moonwatch | $6000 | 100
+Tag Heuer | Carrera | Calibre 16 | $3000 | 25
+Seiko | Prospex | Samurai | $500 | 40
+Casio | G-Shock | DW-5600E | $100 | 40

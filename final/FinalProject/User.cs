@@ -31,6 +31,7 @@ public class User : Product
         case 4:
           UserData dataInfo = new UserData();
           dataInfo.UpdateDataInfo();
+          endProgram = true;
           break;
         default:
           endProgram = true;

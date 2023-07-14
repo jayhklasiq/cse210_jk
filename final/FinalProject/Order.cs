@@ -12,6 +12,8 @@ public class Order
     {
       Console.WriteLine("Thank you for shopping at JK Mall. Your order is being processed.");
       Console.WriteLine("Proceed to payment.");
+      string filePath = "cartItem.txt";
+      File.WriteAllText(filePath, string.Empty);
     }
   }
 }

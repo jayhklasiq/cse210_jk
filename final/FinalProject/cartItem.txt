@@ -1,3 +1,4 @@
 Samsung|Galaxy S22 Ultra|1199
 Google|Pixel 6 Pro|899
 Apple|iPhone 13 Pro|999
+Bulgari|Serpenti|10000
